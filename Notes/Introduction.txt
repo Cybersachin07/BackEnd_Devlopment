@@ -1,0 +1,38 @@
+Business Back End
+- Every business in real-world runs using an ERP system. 
+- ERP is Enterprise Resource Planning.
+- It is business backend with various modules like
+	a) Admin
+	b) Purchasing 
+	c) CRM
+	d) SRM 
+	e) Finance 
+	f)  BI  etc..
+- Popular ERP are
+	a) SAP
+	b) Oracle
+	c) PEGA etc.
+- Business documents include  
+	a) PR [Purchase Requisition]
+	b) PO [Purchase Order]
+	c) Invoice 
+	d) Contract 
+
+Application Backend 
+- Every software business needs an application.
+- Every ERP module requires an application.
+- Applications designed for ERP modules will not maintain the business flow, they are responsible for business interactions in the front end.
+- Application backend depends on the tiers and layers.
+
+FAQ: What is "Tier" architecture?
+Ans :  Application runs on "Tiers".
+	  Software applications are categorized into 
+		a) One-Tier
+		b) Two-Tier
+		c) 3-Tier
+		d) N-Tier etc..
+
+Note: Every web application is a "3-Tier" application.
+		a) Presentation Tier
+		b) Application Tier
+		c) Data Tier
