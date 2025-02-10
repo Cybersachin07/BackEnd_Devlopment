@@ -1,0 +1,60 @@
+Note: Make sure that your MySQL server is running in background.
+	  - Open "services.msc"  on your PC
+	  - Right click on "MySQL" and select start.
+
+MySQL Environment:
+- Every database system comprises of 2 environments
+
+	1. Server
+	2. Client
+
+- Server is the location where your data is kept.
+- Client is the location from where you interact with the data.
+- The client tool is "MySQL Workbench".
+
+Database Objects:
+
+1. Database			: It is store used to maintain data required for application.
+
+2. Table				: It is schema for database used to store data for various 
+					  modules in application. 
+
+3. View				: It is a virtual data set that comprises of data filtered, sorted
+					  or grouped from various tables or from specific table. 
+
+4. Stored Procedure 	: It is used to refactor the statements.
+					  Refactor is the process of encapsulating a set of statements.
+					  So that you can reuse across various locations.
+					  A procedure can return or can be void.
+
+5. Function			: It is used to evaluate a value with any expression.
+					  You can build expressions using function.
+
+6. Trigger				: It is used to execute a set of procedures or functions 
+					  in a sequential order. 
+
+7. Form				: It provides an UI for database, so that developer can
+					  easily interact with database & its objects. [CRUD]
+
+8. Report				: It a process of generating a document that exports your
+					 data into various formats like "pdf, xlsx, csv" etc.
+					 Report is a document that shows your data and allows to
+					 export & print.
+
+9. Macros			: It is used to design batch operations.
+					  Batch operations are a set of sequential operations you 
+					  want to execute repeatedly.
+
+SQL Language:
+- Structured Query Language.
+- It is a language used by developer to communicate with database objects.
+- It uses various operators and functions to handle communication. 
+- Based of type of operations the language is classified into 3 types
+
+		a) DDL
+		b) DML
+		c) DCL
+
+- Data Definition Language used to configure and create the data objects.
+- Data Manipulation Language used to filter, sort, group and manage data.
+- Data Control Language allows to handle security like authorization, authentication.

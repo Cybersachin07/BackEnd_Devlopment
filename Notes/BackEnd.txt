@@ -1,0 +1,36 @@
+What is Backend?
+- Business Backend
+- Application Backend 
+	
+What is difference between Tier & Layers?
+- Application runs in tiers.
+	Database Tier
+	Application Tier
+	Presentation Tier
+- Application is built in layers.
+	Database Layer
+	Business Layer
+	UI Layer
+
+						Database Layer
+1. What is Database?
+A. Database is an organized collection of information electronically & typically stored in a computing system.
+     Organized collection enables features like:
+	- Relationship 
+	- Filtering 
+	- Sorting
+	- Querying 
+	- Grouping etc..
+     Data in database enables data predictions and data analysis.
+
+2. What are the various types of databases?
+A.
+	- Relational Database
+	- Object Oriented Database
+	- Cloud Database
+	- NoSQL Database
+	- Open Source Database
+	- Entity Database [OLTP]
+	- Document Database [JSON]
+	- Distributed Database 
+	- Self Driven Database etc..  [Snow Flake]

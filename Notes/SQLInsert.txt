@@ -1,0 +1,124 @@
+Creating Database 
+Creating Tables
+Creating Constraints
+Foreign Key Constraints 
+
+					     Inserting Data into Tables
+
+- SQL "INSERT" command is used to insert data into a database table.
+- It uses table name, field name and values to insert into table.
+
+Syntax:
+     INSERT  INTO  table_name (field1, field2, ..)  VALUES (value1, value2);
+
+- You have to follow all constraint rules defined to design data table while inserting data.
+- You have to define exactly the same data type for value as defined in structure. 
+- Numeric types are defined with number as value.
+- String types are defined with single quote 'value'.
+- Dates are defined with single quote in 'YY-MM-DD' format.
+
+Ex:
+	INSERT  INTO  tblcategories  (CategoryId, CategoryName)  VALUES
+        (1, 'Electronics');
+
+- You can insert multiple records into table using a "," delimiter. 
+
+Ex:  INSERT INTO tblcategories (CategoryId, CategoryName) VALUES
+       (2, 'Fashion'),
+       (3, 'Footwear'),
+       (4, 'Accessories');
+
+					    Query Data from Tables
+- Query allows you to read and return the data from a database table.
+- SQL provides a "SELECT" command for querying.
+- SELECT refers to field names and uses various operators to fetch data from table.
+- Different operators allow to filter and sort the data.
+
+Syntax:
+      SELECT  field_Name  FROM tableName;
+
+- You can use "*" meta character to search for all fields from table.
+
+Syntax:
+	SELECT  *  FROM table_Name;
+
+Note: Avoid using meta character in query to improve the query performance.
+
+Ex:
+	SELECT  CategoryId, CategoryName  FROM tblcategories;
+
+	SELECT   * FROM tblcategories;
+
+- SELECT allows to alias the field name while querying. It is good to display field name in user friendly format. 
+- It requires "AS" operator for aliasing the field names.
+
+Syntax:
+        SELECT  field_name  AS  alias_name  FROM  table_name;
+
+Ex:
+	SELECT CategoryName AS  'Product Category'  FROM  tblcategories;
+
+- You can set alias for multiple fields.
+
+Ex:
+	SELECT   CategoryId  AS  'Category ID',  CategoryName AS  'Product Category'
+	FROM  tblcategories.
+
+- SELECT allows to embed any expression, evaluate the expression and store the result in an alias field.
+
+- Expression can be any arithematic or by using any built-in functions.
+
+Syntax:
+  SELECT  field_name  (expression) AS  alias_name  FROM table_Name;
+
+Ex:
+  SELECT   Name, Price, Qty, (Qty * Price) AS  Total FROM tblproducts;
+
+  SELECT   FirstName, LastName, (concat('FirstName', 'LastName')) AS 'Full Name' 
+  FROM tblEmployees;
+
+- SELECT allows to filter the data by using "WHERE" command. 
+- WHERE uses an expression to find the matching data and return as result. 
+- Expression is built by using comparison and logical operators.
+
+Comparison Operators:
+			=		Equal
+			>		Greater than
+			> =		Greater than or equal
+			<		Less than
+			< =		Less than or equal
+			< > !=	Not Equal
+
+Logical Operators
+			AND			Logical AND [&&]
+			OR			Logical OR [ || ]
+			NOT			Logical NOT [ ! ]
+
+Syntax:
+	SELECT  Field  FROM table_name  WHERE   Expression;
+
+Ex:
+       SELECT   Name, Price FROM tblproducts  WHERE  Price>10000;
+
+Ex:
+       select Name, Price, Qty AS 'Quantity', (Qty * Price) AS Total from tblproducts Where Name='Mobile';
+
+Task: Write query for accessing product name and price where price is between 10000
+          to 30000.
+
+Ans: 
+	select Name, Price from tblproducts where  Price>=10000  AND  Price<=30000
+
+Task: Write query to access all electronic products with rating above 4.
+
+			ProductId, 
+			Name,
+			Price,
+			Rating,
+			Category
+
+Ans: Select * from tblproducts where Category='Electronics'  AND  Rating>=4;
+
+Task: Write query to access electronics and fashion products.
+
+Ans: Select * from tblproducts where Category='Electronics' OR Category='Fashion';

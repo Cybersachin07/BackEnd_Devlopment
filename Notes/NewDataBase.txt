@@ -1,0 +1,137 @@
+Creating a new Database
+	
+    create		: It is used to create various database objects like
+				database,
+				view,	
+				stored procedure 
+				trigger etc.
+Syntax:
+	create  database  databaseName;
+	create  schema    databaseName;
+Ex:
+	create database  shopping;
+
+2. Select database to start using it
+
+Syntax:
+		use  databaseName;
+		use  shopping;
+
+						MySQL Tables
+- Table provides a schema to store data in rows and columns.
+- You can use "create" command for creating a new table.
+
+Syntax:
+		create  table  table_name
+		(
+
+		)
+
+- Table comprises of fields with following details
+
+		a) field name
+		b) data type
+		c) constraint 
+
+Syntax:
+	   create  table  table_name
+	   (
+	       field_name  data_type   constraint,
+	   )
+
+- MySQL data type determines the type of value you can store in a field. Some of the popular MySQL types are 
+	
+   Number Types:
+			INT				Signed & Unsinged
+			Decimal()			Float, double, decimal 
+			Float			Float
+			Double			Double 
+
+  String Type:
+			VARCHAR
+			LONGTEXT
+			MEDIUMTEXT
+			CHAR
+   
+  Date & Time Type:
+
+			DATE
+			TIME
+			DATETIME
+			YEAR
+
+  Boolean Type: [There is no specific Boolean type in MySQL]
+
+			TINYINT 		0 = false, 1 = true
+
+  
+
+
+Syntax:
+	
+		create  table  tblproducts
+		(
+		    ProductId  INT,
+		    Name  VARCHAR(30),
+		    Price    Decimal(6),
+		    Stock   TINYINT,
+		    Mfd      DATE
+		)
+
+MySQL Constraints:
+- Constraint controls the behavior of field and its value.
+- MySQL table field can use various types of constraints.
+
+		1. Primary Key
+		2. Unique Key
+		3. Foreign Key
+		4. Check
+		5. Not Null
+		6. Default 
+
+Primary Key Constraint:
+- Every record in database table requires a unique identification.
+- It is used for querying and manipulating specific record. 
+- Every table can have only one primary field.
+
+Unique Key Constraint:
+- A database table requires few fields with unique values.
+- The value given for one record can't be used for another record. 
+- You can't have multiple primary keys in a table.
+- Hence a unique key constraint can be used for field.
+- Table can have multiple unique key fields.
+
+Check Constraint:
+- It is used to check the input value by matching with any expression.
+- It allows to store value into field only when it is matching the given expression. 
+- It uses a validator to validate the input value.
+- It ensures that contradictory and unauthorized data is not get stored into database.
+
+Default Constraint:
+- It is used to configure a default value for field.
+- If a value is not provides for field in database table, then it is set to null.
+- You can avoid null and use a default value to store by using default constraint. 
+
+Not Null Constraint:
+- It ensures that the field is not empty.
+- It will not allow null. 
+- It is used for required fields. 
+- If a default value or explicit value is not defined then it will not allow to save data.
+
+Foreign Key Constraint:
+- It configures the relation ship between fields from multiple tables.
+- It is a primary of a table used as a reference in another table.
+- You can have multiple foreign keys to configure various relation ships like
+
+	a) One-to-One
+	b) One-to-Many
+	c) Many-to-Many
+
+Syntax:
+	create table  tblProducts
+	(
+	  ProductId   INT  Primary Key,
+	  Name varchar(30),
+	  Price decimal(6,2),
+	  Mfd  Date
+	)

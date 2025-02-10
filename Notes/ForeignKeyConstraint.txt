@@ -1,0 +1,94 @@
+Foreign Key Constraint:
+- It is used to configure relationship between fields in tables. 
+- You can configure any relationship like
+	a) One-to-One
+	b) One-to-Many
+	c) Many-to-Many
+- Foreign key field must be defined in the table where you want to configure relationship.
+- The field name and data type must match with the reference table field.
+- The foreign key constraint is created to configure relationship between table.
+
+Syntax:
+	 Constraint  constraint_name
+	 FOREIGN KEY  (foreign_key_fieldName)
+	 REFERENCES  reference_table_name(reference_field_name)
+	 ON UPDATE  reference_type
+	 ON DELETE  reference_type
+
+- A constraint name is required to modify or delete constraints. 
+- Foreign key field name is the field in current table that you want as foreign key.
+- Reference table name is the table that contains fields that you want to connect with the foreign key.
+- Reference types are configured to setup relationship between tables so that they can control the data from parent. 
+- There are 3 reference types
+	a) RESTRICT
+	b) CASCADE
+	c) SET NULL
+- The reference types define the actions to perform when the parent field is modified or deleted. 
+- The default reference type is "RESTRICT".
+
+RESTRICT:
+- It configures the relation between parent and child tables.
+- Restrict indicates that the parent field can't be modified or deleted if it comprises of relative fields in child. 
+
+Syntax:
+1. Create Parent table
+
+create table tblcategories
+(
+   CategoryId INT PRIMARY KEY, 
+   CategoryName varchar(30)
+)
+
+2. Create a table with Foreign Key relation
+
+create table tblproducts
+(
+   ProductId INT PRIMARY KEY,
+   Name varchar(30),
+   CategoryId INT, 
+   CONSTRAINT fk_categories FOREIGN KEY (CategoryId) 
+   REFERENCES tblcategories(CategoryId) 
+   ON UPDATE RESTRICT ON DELETE RESTRICT
+)
+
+CASCADE:
+- It is a relationship type configured for foreign key.
+- Cascade indicates that if foreign key field from parent table is deleted or modified then it removes all relative records from all tables that have relation with the field.
+
+Syntax:
+create table tblproducts
+(
+   ProductId INT PRIMARY KEY,
+   Name varchar(30),
+   CategoryId INT, 
+   constraint fk_categories FOREIGN KEY (CategoryId) 
+   REFERENCES tblcategories(CategoryId) 
+   ON UPDATE CASCADE ON DELETE CASCADE
+)
+
+SET NULL
+- It is a relationship type configured for foreign key.
+- It is used to SET null as value into the data of table that have relationship with parent.
+- If field is changed or deleted the relative data is set to Null.
+
+Syntax:
+create table tblproducts
+(
+   ProductId INT PRIMARY KEY,
+   Name varchar(30),
+   CategoryId INT, 
+   constraint fk_categories FOREIGN KEY (CategoryId) 
+   REFERENCES tblcategories(CategoryId) 
+   ON UPDATE CASCADE ON DELETE SET NULL
+)
+
+FAQ's:
+1. Can we define multiple foreign key fields?
+A. Yes. You can define from or multiple tables.
+
+Syntax:
+	constraint  fk_name   Foreign Key (Field1, Field2, ..)
+	References  tblName(field1, field2,...)
+	
+2. Can we configure multiple constrains?
+A. Yes. If fields are from various tables then you can have a constraint for every table.

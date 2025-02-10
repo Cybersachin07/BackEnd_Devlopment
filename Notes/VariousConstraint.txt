@@ -1,0 +1,105 @@
+Creating a table with various constraints:
+
+1. Primary Key		:  It uses  "PRIMARY KEY"  
+					:  It sets   UNIQUE  & NOT NULL.
+
+Syntax:
+	create table  tblcategories 
+	(
+	   CategoryId  INT   PRIMARY KEY,
+	   CategoryName  varchar(20)
+	)
+
+2. Not Null			: It uses  "NOT NULL" 
+
+Syntax:
+	create table tblcategories
+	(
+	  CategoryId  INT  PRIMARY KEY,
+	  CategoryName  varchar(20)  NOT NULL
+	)
+
+
+3.  Unique 			: It uses  "UNIQUE" 
+
+Syntax:
+	create table tblcategories
+	(
+	  CategoryId  INT  PRIMARY KEY,
+	  CategoryName  varchar(20) NOT NULL   UNIQUE 
+	)
+
+     Unique verifies only the value and ignores the capitalization. 
+     
+4. Default 		: It uses "DEFAULT"
+				  It takes are default value.
+				  Value type must match the field type.
+
+Syntax:
+	create  table tblproducts
+	(
+	   ProductId  INT  PRIMARY KEY,
+	   Name varchar(40) NOT NULL,
+	   Qty INT  DEFAULT 1
+	)
+
+5. Check				: It uses "CHECK" with any condition.
+					  Condition requires decision making operators.
+
+Syntax:
+	create table tblProducts
+	(
+	   ProductId  INT  PRIMARY KEY,
+	   Name varchar(40) NOT NULL,
+	   Qty INT  DEFAULT 1 CHECK(Qty<5)
+	)
+
+  Comparison Operators
+		>		greater than
+		>=		greater than or equal
+		<		less than
+		<=		less than or equal
+ 		<>	!=	Not equal
+		=		Equal 
+  Logical Operators
+		AND		
+		OR
+		NOT
+
+6. Auto Increment		: It allows to increment the value of a field by 1 and add 
+					  to preceding field.
+					  It uses "AUTO_INCREMENT"
+					  The default value starts with 1.
+					  The preceding value depends on the previous value.
+
+Syntax:
+create table tblproducts
+(
+  ProductId INT PRIMARY KEY AUTO_INCREMENT,
+  Name varchar(30) NOT NULL,
+  Qty INT DEFAULT 1 CHECK(Qty<5)
+)
+
+Note: Auto_Increment can be defined only for fields that handle numeric type data.
+
+
+7. Foreign Key		: It uses "FOREGIN KEY" with "REFERENCE"	
+					  Reference is from a table that have relationship with 
+					  current table.
+					  The foreign key constraint changes according to type of 
+					   relation ship.
+						a) One-to-One
+					 	b) One-to-Many
+						c) Many-to-Many
+
+Business Model of i-shop Application: 
+
+1. Conceptual Model of i-shop
+
+		- Customers
+		- Admin
+		- Vendors
+		- Shopping Cart
+		- Products
+		- Shipping & Billing
+		- Categories

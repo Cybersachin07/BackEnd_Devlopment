@@ -1,0 +1,68 @@
+What is database?
+What are various types of databases?
+
+Database Models:
+- Every software application is built with a set of modules. 
+- Each module have different roles and responsibilities. 
+- Every module doesn't require data to maintain.
+- Developer have to identify the modules that require data and design database models
+	
+	a) Conceptual Model
+	b) Physical Model
+	c) Logical Model
+	d) Entity Model
+
+Conceptual Model
+- It comprises of a list of modules that require data.
+- It is a database model for initializing the data requirements. 
+
+Syntax:
+		admin
+		user
+		product
+
+Physical Model
+- It comprises of information or data related to each module.
+- It is a database model that contains information about the fields and their data type.
+
+Syntax:
+		tbladmin
+			admin_id [number]
+			admin_name[string]
+			password [string]
+
+		 tblproduct
+			product_id [number]
+			name [ string ]
+			price [ number ]
+			rating [number]
+
+Logical Model
+- It contains information about relationship between modules.
+- It is a database model to configure relationship using Primary & Foreign Key.
+
+		tblProduct
+			product_id [PK]
+			name 
+			CategoryId [FK]
+
+		tblCategory	
+			category_id [PK]
+			name
+
+Entity Model
+- It is the complete business model.
+- Entity refers to business requirements.
+- It is a database model that comprises of details like table, field, data type, relationship etc.
+- It is a blue print for designing database. 
+- The final model is known as "Entity Relationship Diagram".
+
+Syntax:
+	 tblcategory
+		category_id : number [PK]
+		name : string
+	
+	 tblproduct
+		product_id : number [PK]
+		name : string
+		category_id: number [FK - reference tblCategory]
