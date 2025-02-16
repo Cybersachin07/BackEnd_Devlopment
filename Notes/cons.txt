@@ -1,0 +1,117 @@
+- Group By is used to group similar type of content after evaluating specific expression or function.
+
+Syntax:
+  select expression, fields from tableName  where expression group by field_name;
+
+Ex:
+SELECT count(*) FROM shopping.tblproducts where Rating > 3;     // returns 3 count
+SELECT count(*) FROM shopping.tblproducts where Rating > 3 group by Category;
+													      // return 2, 1
+SELECT Category, count(*) FROM shopping.tblproducts where Rating > 3 group by Category;
+
+		// Electronics   2
+		   Footwear     1
+
+- You can select records using NULL or NOT NULL
+
+Syntax:
+   Select * from table_name where  field_name IS NULL;
+ 
+Ex:
+   Select * from tblproducts where  Rating IS NULL;
+   Select * from tblproducts where  Rating IS NOT NULL;
+
+- You can avoid selecting duplicate values by using DISTINCT.
+- MYSQL identifies the records as duplicates only where all values are similar.
+
+Syntax:
+	 Select DISTINCT from tableName;
+
+- You can select records and return the result by using various formats and value evaluations. It requires various types of MySQL functions. 
+- MySQL provides built-in functions to handle string, number, date etc.
+
+MySQL String Functions:
+
+1. ASCII()	: It returns the ASCII code of specified character.
+			  If it is used for a field, then it returns the ACSII code of first character in
+			  String.
+Syntax:
+	SELECT  ASCII('A');		// 65
+	SELECT  ASCII(a);			// 97
+Ex:
+SELECT Name, ascii(Name) as ProductName_FirstChar_Code from tblproducts;
+
+2. CHAR_LENGTH()	: It returns the total count of Characters in a string.
+
+Syntax:
+	SELECT  CHAR_LENGTH('Welcome');	// 7
+
+Ex:
+SELECT Name, char_length(Name) as Total_Count_Of_Chars from tblproducts;
+
+3. SUBSTRING() 		:  It returns specified numbers of chars from given index.
+
+Syntax:
+     SELECT  substring('string', startIndex);				// reads up to end
+     SELECT  substring('string', startIndex, countOfChars);
+     SELECT  substring('Welcome to MySQL', 9,2);		// to
+     SELECT  substring('Welcome to MySQL', 9);			// to MySQL
+
+4. SUBSTR()			: It returns specified number of chars from given index.
+					  It is alias function for substring. 
+
+Note: The start position is 1. It is not index number. 
+
+Ex:
+SELECT Name, substring(Name, 1,4) as ProductName_Sliced from tblproducts;
+
+5. TRIM()				: It remove leading spaces from a string.
+
+Syntax:
+	SELECT  TRIM('Welcome    ');		// 'Welcome'
+
+6. CONCAT()			: It concat multiple strings into a single string.
+
+Syntax:
+	SELECT  CONCAT('First', 'Last');		FirstLast
+
+Ex:
+	Select FirstName, LastName, concat(FirstName, LastName) as FullName from tblEmployee
+
+
+7. UPPER()		: It returns a string in Uppercase letters.
+
+8. LOWER()		: It returns a string in Lowercase letters.
+
+Ex:
+select Name, upper(Name) as ProductName from tblproducts;
+select Name, lower(Name) as ProductName from tblproducts;
+
+9. FORMAT()		: It can apply a format for numeric values.
+				  It converts into a string and applies format of value.
+
+Syntax:
+    SELECT  FORMAT(Number, Decimal Places)
+
+Ex: 
+    SELECT Name, Price, format(Price, 2) from tblproducts ;
+
+
+MySQL Number Functions:
+
+1. COUNT()		: It returns the count of records that matches the given condition.
+				  It uses "*" to return all records count.
+
+Ex:
+Select count(*) from tblproducts where Rating > 4;
+Select count(*) from tblproducts where Category='Electronics';
+Select count(*) from tblproducts where (Category='Electronics') AND Rating > 4;
+
+2. AVG()
+
+3. MIN()
+
+4. MAX()
+
+etc..
+
