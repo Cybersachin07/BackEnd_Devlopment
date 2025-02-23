@@ -1,0 +1,78 @@
+MongoDB
+
+- It is open source and cross platform NON-SQL database.
+- It is document oriented and semi-structured database.
+- Document oriented allows to handle schema less content.
+- It supports ORM [Object Relational Mapping].
+- ORM introduces features like  lazy loading, change tracking, identity resolution etc.
+- It supports AD-HOC querying. [Dynamic Queries]
+- It supports Indexing. [It doesn't require a primary key field]
+- It supports data replications, which enable to handle load.
+
+Issues with MongoDB:
+- It is structured less.
+- It is non-relational
+- It is not great for data predictions and analytics.
+
+Setup MongoDB in your PC:
+
+1. Download MongoDB Community Server
+
+        https://www.mongodb.com/try/download/community
+
+2. Run the Installer on your PC and select  "MongoDB Compass"  while installing.
+
+
+3. Start MongoDB server from  "Services.msc"
+
+4. MongoDB server runs on following IP location
+
+    mongodb://127.0.0.1:27017
+            (or)
+    mongodb://localhost:27017
+
+5. Open MongoDB Compass on your PC.
+    [ It is a GUI tool for managing MongoDB]
+
+6. Create New Connection with following address
+
+            mongodb://127.0.0.1:27017
+
+7. Connect & Save
+
+                          MongoDB Terminology
+
+MySQL                        MongoDB
+-----------------------------------------------------------------------------------
+Database     (Schema)            Database
+
+Tables                        Collections
+
+Record / Row                    Document
+
+Field                        Field [ Key ]
+
+Joins                        Embedded Documents
+
+
+Note: MongoDB Compass provides
+        a) GUI         : For handling database and its objects graphically.    
+        b) Mongosh    : Mongo Shell, which is a CLI [command line tool].
+
+
+                          Mongo Shell Commands
+
+1. To view existing databases
+
+        > show dbs
+
+     - The default databases on MongoDB server
+        a) admin
+        b) config
+        c) local
+
+2. To clear screen
+
+        > cls
+
+3. To recall the recently used commands  use  up & down arrows.
